@@ -8,6 +8,11 @@ case $- in
       *) return;;
 esac
 
+# Source git-prompt script
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+    export GIT_PS1_SHOWDIRTYSTATE=1
+fi
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -66,7 +71,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1\$(__git_ps1) "
     ;;
 *)
     ;;
