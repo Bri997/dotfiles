@@ -119,4 +119,10 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
+ fi
+
+ export DIGITALOCEAN_ACCESS_TOKEN=ffed62197d799800703d11af3d8a61da20044d4b75b0530c49fb02ae7fef783e
+
+export GO_PATH=~/go
+export PATH=$PATH:/$GO_PATH/bin
+
