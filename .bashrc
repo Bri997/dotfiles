@@ -126,3 +126,7 @@ fi
 export GO_PATH=~/go
 export PATH=$PATH:/$GO_PATH/bin
 
+#VScode command path for mac
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+
